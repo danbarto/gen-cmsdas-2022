@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     mt_muf_u_mur_n_h.fill(
         mt,
-        weight=weights[selection]*t['LHEScaleWeight'][selection][:,5],  # can multiply with respective norm
+        weight=weights[selection]*t['LHEScaleWeight'][selection][:,4],  # can multiply with respective norm
     )
 
     # alphaS variations not kept in this example, so omitted
