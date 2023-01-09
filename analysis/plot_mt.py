@@ -74,19 +74,18 @@ if __name__ == '__main__':
 
     mt_muf_u_mur_n_h.fill(
         mt,
-        weight=weights[selection]*t['LHEScaleWeight'][selection][:,4],  # can multiply with respective norm
+        weight=weights[selection]*t['LHEScaleWeight'][selection][:,5],  # can multiply with respective norm
     )
 
-    # alphaS variations not kept in this example, so omitted
-    #mt_alphas_u_h.fill(
-    #    mt,
-    #    weight=weights[selection]*t['LHEPdfWeight'][selection][:,101],
-    #)
+    mt_alphas_u_h.fill(
+        mt,
+        weight=weights[selection]*t['LHEPdfWeight'][selection][:,101],
+    )
 
-    #mt_alphas_d_h.fill(
-    #    mt,
-    #    weight=weights[selection]*t['LHEPdfWeight'][selection][:,102],
-    #)
+    mt_alphas_d_h.fill(
+        mt,
+        weight=weights[selection]*t['LHEPdfWeight'][selection][:,102],
+    )
 
     # make the plot
     plt.style.use(hep.style.CMS)
@@ -116,14 +115,14 @@ if __name__ == '__main__':
         label   = r'$\mu_{f}\ uncertainty$'
     )
 
-    #add_systematic(
-    #    ax,
-    #    up      = mt_alphas_u_h.values(),
-    #    down    = mt_alphas_d_h.values(),
-    #    color   = 'blue',
-    #    hatch   = 'XXX',
-    #    label   = r'$\alpha_{S}\ uncertainty$'
-    #)
+    add_systematic(
+        ax,
+        up      = mt_alphas_u_h.values(),
+        down    = mt_alphas_d_h.values(),
+        color   = 'blue',
+        hatch   = 'XXX',
+        label   = r'$\alpha_{S}\ uncertainty$'
+    )
 
     plt.legend()
     f.savefig('./mt.pdf')
